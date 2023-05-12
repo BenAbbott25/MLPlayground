@@ -1,0 +1,6 @@
+jupyter
+tensorflow-macos
+numpy
+pandas
+matplotlib
+Pillow

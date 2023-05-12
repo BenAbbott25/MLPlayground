@@ -30,9 +30,15 @@ def load_data():
     test_data = np.array(test_data, dtype=np.float32)
     test_labels = np.array(test_labels, dtype=np.int32)
 
+    # normalize the data
+    train_data = train_data / 255.0
+    test_data = test_data / 255.0
+
+    print("Data loaded")
+    
     return train_data, train_labels, test_data, test_labels
 
 
-train_data, train_labels, test_data, test_labels = load_data()
-print("Data loaded")
+# train_data, train_labels, test_data, test_labels = load_data()
+# print("Data loaded")
 
