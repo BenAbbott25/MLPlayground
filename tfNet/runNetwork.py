@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import os
 import csv
 
+
 # import the load_data function from loadData.py
 from loadData import load_data
 train_data, train_labels, test_data, test_labels = load_data()
