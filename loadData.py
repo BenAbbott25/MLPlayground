@@ -5,10 +5,16 @@ import os
 import csv
 import random
 
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, Dataset
+
 
 # load the data
 def load_data():
     print("Loading data")
+    # empty tensors to store data
     train_data = []
     train_labels = []
     test_data = []
@@ -16,26 +22,31 @@ def load_data():
     with open('mnist_train.csv', 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for row in reader:
+            for i in range(1, len(row)):
+                row[i] = float(row[i])
             train_data.append(row[1:])
-            train_labels.append(row[0])
+            train_labels.append(int(row[0]))
+
     with open('mnist_test.csv', 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for row in reader:
+            for i in range(1, len(row)):
+                row[i] = float(row[i])
             test_data.append(row[1:])
-            test_labels.append(row[0])
+            test_labels.append(int(row[0]))
 
-    # convert to numpy arrays
-    train_data = np.array(train_data, dtype=np.float32)
-    train_labels = np.array(train_labels, dtype=np.int32)
-    test_data = np.array(test_data, dtype=np.float32)
-    test_labels = np.array(test_labels, dtype=np.int32)
+    # convert to tensors
+    train_data = torch.tensor(train_data, dtype=torch.float32)
+    train_labels = torch.tensor(train_labels, dtype=torch.int64)
+    test_data = torch.tensor(test_data, dtype=torch.float32)
+    test_labels = torch.tensor(test_labels, dtype=torch.int64)
 
     # normalize the data
-    train_data = train_data / 255.0
-    test_data = test_data / 255.0
+    train_data = train_data / 255
+    test_data = test_data / 255
 
     print("Data loaded")
-    
+
     return train_data, train_labels, test_data, test_labels
 
 
