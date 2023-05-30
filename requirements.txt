@@ -5,3 +5,4 @@ pandas
 matplotlib
 Pillow
 torch
+cv2
