@@ -161,3 +161,7 @@ cython_debug/
 
 mnist_test.csv
 mnist_train.csv
+
+sudoku/Sudokus.csv
+
+sudoku/Sudokus.csv
