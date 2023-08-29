@@ -1,0 +1,50 @@
+=== The Basics ===
+Players start with 40 life each.
+Last player alive or first to collect a set of red face cards wins.
+
+Red cards are money, worth the value
+Black cards are damage, dealing damage of the value.
+
+
+=== Set Up ===
+To start, separate cards by colour into piles of: J, Q, K, starting cards (values 2 - 4), and the rest (ranks). Arrange in two rows of ranks face down, then faces ascending face up.
+
+Shuffle and deal the starting cards so each player has an equal number of black and red cards. Then have each player shuffle and place those cards face down as their deck.
+To begin, and after each turn, players draw from their deck until they have 4 cards. 
+
+
+==Actions==
+On their turn, players may do one of the following actions:
+
+_Deal damage_
+Play any number of black cards and choose a player to take the sum of their values in damage. 
+
+_Buy cards_
+Play any number of red cards and spend up to the sum of their values on cards.
+Number cards cost 4 each to buy (5 in two player). Face prices:
+RJ/RQ/RK: 15/20/25
+BJ/BQ/BK: 10/15/20
+
+_Burn cards_
+Choose up to two cards in hand to burn. These cards are taken out of the game and are not shuffled back in with the rest of the discard deck.
+
+==After Actions==
+Played and bought cards go in the players discard. A player may also discard all unused cards after taking their action
+
+==End of Turn==
+After taking their turn, players draw back up to 4 cards. If a player needs to draw and there are no cards in their deck, shuffle the discard pile and turn it face down as the deck. There is no minimum deck size.
+
+
+
+==Special Cards==
+_Aces_
+Aces duplicate the value of the highest card of that colour when played. (Eg A♠️, 7♠️, 6♣️ deals 20 instead of 13. A♦️, 3♥️,  5♦️ is worth 13 instead of 8)
+       
+_Faces_
+Black face cards are placed landscape in front of a player when bought, and act as shields. 
+J/Q/K defends 5/10/15 damage. (Subtract that from the damage dealt).
+If an attack deals the shield amount or more, the shield card is put in the discard pile and the remaining damage goes through.
+If a player draws a shield from their deck, it goes down automatically at the beginning of your turn (they can still take their action for the turn).
+You can't have multiple of the same shield card on the field; if you have eg a BQ on field and a BQ in hand, you can discard on your turn, or wait until the shield breaks.
+
+Red face cards must be bought in ascending order, and go face up in front of the player when bought. If a player collects 1 of each of the red face set (J/Q/K) they win.
