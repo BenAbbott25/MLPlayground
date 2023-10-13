@@ -15,10 +15,10 @@ def load_data(filename, order):
     frames = wav_file.readframes(nframes)
     for i in range(nframes):
         if np.random.rand() < 0.5:
-            train_data.append(fourier(i,order))
+            train_data.append(fourier(np.pi*i/nframes,order))
             train_labels.append(frames[i]/32767.0)
         else:
-            test_data.append(fourier(i,order))
+            test_data.append(fourier(np.pi*i/nframes,order))
             test_labels.append(frames[i]/32767.0)
     wav_file.close()
     # convert to tensors
