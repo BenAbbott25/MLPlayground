@@ -23,10 +23,7 @@ def generate_wav(filename, amplitudes):
 
     for i in range(len(amplitudes)):
         # Construct the wav file from the amplitudes
-        print(i)
         value = int(max_amplitude * amplitudes[i])
-        print(amplitudes[i])
-        print(value)
         wave_file.writeframesraw(value.to_bytes(2, byteorder='little', signed=True))
         
         

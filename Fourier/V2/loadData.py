@@ -14,7 +14,7 @@ def load_data(filename, order):
     nframes = wav_file.getparams().nframes
     frames = wav_file.readframes(nframes)
     for i in range(nframes):
-        if i % 2 == 0:
+        if np.random.rand() < 0.5:
             train_data.append(fourier(i,order))
             train_labels.append(frames[i]/32767.0)
         else:
