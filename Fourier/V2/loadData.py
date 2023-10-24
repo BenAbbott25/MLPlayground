@@ -2,6 +2,9 @@ import wave
 import numpy as np
 import torch
 from fourierSeries import fourier
+from tqdm import tqdm
+
+max_amplitude = 32767.0
 
 def load_data(filename, order):
     print("Loading data")
@@ -13,13 +16,13 @@ def load_data(filename, order):
     wav_file = wave.open(filename, 'r')
     nframes = wav_file.getparams().nframes
     frames = wav_file.readframes(nframes)
-    for i in range(nframes):
+    for i in tqdm(range(nframes), desc="Loading data"):
         if np.random.rand() < 0.5:
-            train_data.append(fourier(np.pi*i/nframes,order))
-            train_labels.append(frames[i]/32767.0)
+            train_data.append(fourier(i,order))
+            train_labels.append(frames[i]/max_amplitude)
         else:
-            test_data.append(fourier(np.pi*i/nframes,order))
-            test_labels.append(frames[i]/32767.0)
+            test_data.append(fourier(i,order))
+            test_labels.append(frames[i]/max_amplitude)
     wav_file.close()
     # convert to tensors
     train_data = torch.tensor(train_data, dtype=torch.float32)

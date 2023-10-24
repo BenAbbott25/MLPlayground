@@ -1,6 +1,7 @@
 import wave
 import math
 import numpy as np
+from tqdm import tqdm
 
 # filename = "sine_wave.wav"
 # duration = 10  # Duration in seconds
@@ -21,7 +22,7 @@ def generate_wav(filename, amplitudes):
     wave_file = wave.open(filename, 'w')
     wave_file.setparams((1, 2, sample_rate, num_samples, 'NONE', 'not compressed'))
 
-    for i in range(len(amplitudes)):
+    for i in tqdm(range(num_samples)):
         # Construct the wav file from the amplitudes
         value = int(max_amplitude * amplitudes[i])
         wave_file.writeframesraw(value.to_bytes(2, byteorder='little', signed=True))
