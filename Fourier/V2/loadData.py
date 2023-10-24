@@ -18,10 +18,10 @@ def load_data(filename, order):
     frames = wav_file.readframes(nframes)
     for i in tqdm(range(nframes), desc="Loading data"):
         if np.random.rand() < 0.5:
-            train_data.append(fourier(i,order))
+            train_data.append(fourier(i/nframes,order))
             train_labels.append(frames[i]/max_amplitude)
         else:
-            test_data.append(fourier(i,order))
+            test_data.append(fourier(i/nframes,order))
             test_labels.append(frames[i]/max_amplitude)
     wav_file.close()
     # convert to tensors
