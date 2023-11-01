@@ -18,6 +18,8 @@ def generate_wav(filename, amplitudes):
     sample_rate = 44100  # Sample rate in Hz
     max_amplitude = 32767.0  # Amplitude of the sine wave (0 to 32767)
     num_samples = len(amplitudes)
+    print(f"maxPeak: ${max(amplitudes)}")
+    print(f"minPeak: ${min(amplitudes)}")
 
     wave_file = wave.open(filename, 'w')
     wave_file.setparams((1, 2, sample_rate, num_samples, 'NONE', 'not compressed'))

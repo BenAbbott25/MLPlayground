@@ -3,7 +3,7 @@ import math
 import numpy as np
 
 filename = "A7_chord.wav"
-duration = 2.5  # Duration in seconds
+duration = 0.5  # Duration in seconds
 sample_rate = 44100  # Sample rate in Hz
 frequency_root = 440.0  # Frequency of the root note (A) in Hz
 frequency_Maj_third = 554.37  # Frequency of the major third (C#) in Hz
@@ -11,10 +11,10 @@ frequency_fifth = 659.25  # Frequency of the fifth (E) in Hz
 # frequency_min_seventh = 415.30  # Frequency of the minor seventh (G) in Hz
 frequency_9th = 493.88 #B
 
-amplitude_root = 0.6  # Amplitude for root note
-amplitude_third = 0.5  # Amplitude for major third
-amplitude_fifth = 0.5  # Amplitude for fifth
-amplitude_seventh = 0.35  # Amplitude for minor seventh
+amplitude_root = 0.3  # Amplitude for root note
+amplitude_third = 0.25  # Amplitude for major third
+amplitude_fifth = 0.25  # Amplitude for fifth
+amplitude_seventh = 0.175  # Amplitude for minor seventh
 
 num_samples = int(duration * sample_rate)
 amplitude = 32767.0  # Maximum amplitude of the sine wave (0 to 32767)

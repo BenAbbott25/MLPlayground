@@ -14,15 +14,31 @@ def load_data(filename, order):
     test_data = []
     test_labels = []
     wav_file = wave.open(filename, 'r')
+    # Graph the wav file
+    import matplotlib.pyplot as plt
     nframes = wav_file.getparams().nframes
     frames = wav_file.readframes(nframes)
+    full_data = []
+    full_labels = []
     for i in tqdm(range(nframes), desc="Loading data"):
-        if np.random.rand() < 0.5:
-            train_data.append(fourier(i/nframes,order))
-            train_labels.append(frames[i]/max_amplitude)
+        full_data.append(fourier(((2*np.pi*i/nframes)-np.pi),order))
+        full_labels.append(frames[i]/max_amplitude)
+
+    for i in range(len(full_data)):
+        if np.random.rand() < 0.65:
+            train_data.append(full_data[i])
+            train_labels.append(full_labels[i])
         else:
-            test_data.append(fourier(i/nframes,order))
-            test_labels.append(frames[i]/max_amplitude)
+            test_data.append(full_data[i])
+            test_labels.append(full_labels[i])
+
+    plt.figure(figsize=(10, 5))
+    plt.plot(full_labels, color='blue')
+    plt.title('Full Labels Graph')
+    plt.xlabel('Index')
+    plt.ylabel('Value')
+    plt.show()
+
     wav_file.close()
     # convert to tensors
     train_data = torch.tensor(train_data, dtype=torch.float32)
